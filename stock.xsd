@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- Définition de l'élément racine "stock" -->
+    <xsd:element name="stock" type="StockType"/>
+
+    <!-- Types complexes -->
+    <xsd:complexType name="StockType">
+        <xsd:sequence>
+            <xsd:element name="nouveau" type="NouveauType"/>
+            <xsd:element name="occasion" type="OccasionType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="NouveauType">
+        <xsd:sequence>
+            <xsd:element name="libelle" type="xsd:string"/>
+            <xsd:element name="prix" type="PrixType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="OccasionType">
+        <xsd:sequence>
+            <xsd:element name="libelle" type="xsd:string"/>
+            <xsd:element name="category" type="CategoryType"/>
+            <xsd:element name="prix" type="PrixType"/>
+            <xsd:element name="etat" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <!-- Types complexes à contenu simple -->
+	<xsd:complexType name="PrixType">
+		<xsd:simpleContent>
+			<xsd:extension base ="PrixTypeSimple">
+				<xsd:attribute name="devise" type="DeviseType" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+    <!-- Types simples -->
+    
+	<xsd:simpleType name="PrixTypeSimple">
+        <xsd:restriction base="xsd:decimal"/>
+    </xsd:simpleType>
+		
+	<xsd:simpleType name="DeviseType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DZD"/>
+            <xsd:enumeration value="EUR"/>
+            <xsd:enumeration value="USD"/>
+            <xsd:enumeration value="YEN"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+	
+	<xsd:simpleType name="CategoryType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="food"/>
+            <xsd:enumeration value="games"/>
+            <xsd:enumeration value="books"/>
+         </xsd:restriction>
+    </xsd:simpleType>
+
+
+			
+</xsd:schema>

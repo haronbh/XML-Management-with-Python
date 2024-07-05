@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<commande orderid="c9964">
+  <client>Yamada Ayu</client>
+  <livraison>
+    <adresse>380-1299, Mahikizawa</adresse>
+    <ville>Tama-shi</ville>
+    <pays>Japan</pays>
+  </livraison>
+  <item category="games">
+    <libelle>Wii U</libelle>
+    <note>Special Edition</note>
+    <quantite>1</quantite>
+    <prix>900000</prix>
+  </item>
+  <item category="food">
+    <libelle>semoule</libelle>
+    <quantite>10</quantite>
+    <prix devise="DZD">1050</prix>
+  </item>
+</commande>

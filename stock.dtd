@@ -1,0 +1,8 @@
+    <!ELEMENT stock (nouveau, occasion+)>
+    <!ELEMENT nouveau (libelle, prix)>
+    <!ELEMENT occasion (libelle, category, prix, etat)>
+    <!ELEMENT libelle (#PCDATA)>
+	<!ELEMENT category (#PCDATA)>
+    <!ELEMENT prix (#PCDATA)>
+	<!ATTLIST prix devise (DZD | EUR | USD |YEN) #REQUIRED>
+    <!ELEMENT etat (#PCDATA)>

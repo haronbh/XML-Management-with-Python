@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Définition des éléments et attributs -->
+
+  <!-- Élément racine "commande" avec l'attribut "orderid" de type string -->
+  <xsd:element name="commande">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="client" type="xsd:string"/>
+        <xsd:element name="livraison">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="adresse" type="xsd:string"/>
+              <xsd:element name="ville" type="xsd:string"/>
+              <xsd:element name="pays" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="item" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="libelle" type="xsd:string"/>
+              <xsd:element name="note" type="xsd:string" minOccurs="0"/>
+              <xsd:element name="quantite" type="xsd:positiveInteger"/>
+              <xsd:element name="prix">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:positiveInteger">
+                      <xsd:attribute name="devise" type="xsd:string"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="category" type="xsd:string"/>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="orderid" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+
+</xsd:schema>
+

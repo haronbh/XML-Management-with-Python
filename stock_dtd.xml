@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone ="no"?>
+<!DOCTYPE stock [
+	<!ELEMENT stock (nouveau, occasion+)>
+    <!ELEMENT nouveau (libelle, prix)>
+    <!ELEMENT occasion (libelle, category, prix, etat)>
+    <!ELEMENT libelle (#PCDATA)>
+	<!ELEMENT category (#PCDATA)>
+    <!ELEMENT prix (#PCDATA)>
+	<!ATTLIST prix devise (DZD | EUR | USD |YEN) #IMPLIED>
+    <!ELEMENT etat (#PCDATA)>
+]>
+<stock>
+	<nouveau>
+		<libelle>Semoule</libelle>
+		<prix devise="USD">12</prix>
+	</nouveau>
+	<occasion>
+		<libelle>Nintendo Wii</libelle>
+		<category>games</category>
+		<prix devise="DZD">9000</prix>
+		<etat>Bon</etat>
+	</occasion>
+	<occasion>
+		<libelle>Gödel, Escher, Bach: an Eternal Golden Braid</libelle>
+		<category>books</category>
+		<prix devise="EUR">40</prix>
+		<etat>Acceptable</etat>
+	</occasion>
+</stock>  
+
+  

@@ -1,0 +1,18 @@
+<!ELEMENT commande (client, livraison, item*)>
+<!ATTLIST commande orderid CDATA #REQUIRED>
+
+<!ELEMENT client (#PCDATA)>
+<!ELEMENT livraison (adresse, ville, pays)>
+<!ELEMENT adresse (#PCDATA)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT pays (#PCDATA)>
+
+<!ELEMENT item (libelle, note?, quantite, prix)>
+<!ATTLIST item category CDATA #IMPLIED>
+
+<!ELEMENT libelle (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
+<!ELEMENT quantite (#PCDATA)>
+<!ELEMENT prix (#PCDATA)>
+<!ATTLIST prix devise CDATA #IMPLIED>
+
